@@ -1,1 +1,28 @@
-xghjfghk, fcjfyk,
+import openai
+
+# Replace 'YOUR_API_KEY' with your actual API key from OpenAI
+openai.api_key = 'YOUR_API_KEY'
+
+# Example prompt for GPT-3.5 to generate text from
+prompt = "Once upon a time in a faraway land, there was a brave knight who"
+
+# Generate text from the prompt using GPT-3.5
+response = openai.Completion.create(
+    engine="text-davinci-003",  # GPT-3.5 engine
+    prompt=prompt,
+    temperature=0.7,  # Controls the creativity of the generated text
+    max_tokens=100,    # Limit the response to a certain number of tokens
+)
+
+# Extract and print the generated text from the API response
+generated_text = response['choices'][0]['text']
+print(generated_text)
+Keep in mind that using the API might involve some limitations, and you should review OpenAI's documentation for more details and best practices.
+
+Please note that the GPT-3.5 codebase is proprietary to OpenAI, and only certain parts of it are made available through their API. If you're looking for the underlying architecture details or the full source code, it is not publicly available.
+
+
+
+
+
+
